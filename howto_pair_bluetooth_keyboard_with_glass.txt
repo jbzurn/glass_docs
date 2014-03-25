@@ -26,7 +26,7 @@ It will say “list of devices attached” The line below should show a long num
 
 Note: adb is the Android Debug Bridge. It is installed when you get the Android APK and allows your computer to communicate directly with the Android device.
 
-3b) Type the following command into the terminal:
+3b) Make sure the screen on your Glass is on, then type the following command into the computer terminal:
 
 adb shell am start -a android.intent.action.MAIN -n com.android.settings/.Settings
 
