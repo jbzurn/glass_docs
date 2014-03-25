@@ -1,0 +1,45 @@
+How to pair bluetooth keyboard with Glass
+
+1. Make sure your Glass is in debug mode
+2. Install Settings.apk
+
+2a) download Settings.apk from http://www.glassxe.com/2013/05/23/settings-apk-and-launcher2-apk-from-the-hacking-glass-session-at-google-io/
+
+Note which folder you save it in. You'll need to know this later. You won't need the other program they describe (Launcher2.apk) at this time, so ignore it.
+
+Note: at this time, ensure you have Android APK installed. If this is the first “special” thing you've tried to do with Glass, or haven't heard of APK, then you probably don't have it. Download and install it from http://developer.android.com/sdk/index.html , following their instructions.
+
+2b) On Linux, open a terminal console window. Navigate to the directory where Settings.apk is located. 
+
+2c) Install by typing  
+
+adb install Settings.apk  (this is case sensitive!)
+
+Note: this allows us to pair with bluetooth devices, but it's strongly recommended to remove it immediately afterwards because the package causes numerous errors. Removing the package doesn't affect the bluetooth pairing relationships.
+
+3. Pair the bluetooth keyboard with your Glass.
+3a) Make sure your Glass is plugged into your usb port, and confirm it's attached by typing 
+
+adb devices 
+
+It will say “list of devices attached” The line below should show a long number followed by “device”. This is your Glass ID, and shows it's connected and the computer can see it.  
+
+Note: adb is the Android Debug Bridge. It is installed when you get the Android APK and allows your computer to communicate directly with the Android device.
+
+3b) Type the following command into the terminal:
+
+adb shell am start -a android.intent.action.MAIN -n com.android.settings/.Settings
+
+3c) On your Glass, select Settings, tell it to search for bluetooth devices. Make sure your keyboard is turned on and broadcasting the bluetooth signal. If you have an iPazzPort keyboard, turn on the side switch, then press and hold the BT button on the top for a few seconds. When its blue light begins to blink, it is ready to pair.
+
+3d) Note the pairing code displayed on the Glass, and type that code into the bluetooth keyboard. 
+
+It should be paired now!
+
+4) UNINSTALL THE SETTINGS APK!! This is important because this APK causes problems. Uninstalling won't affect your bluetooth pairing. Type
+
+adb uninstall com.android.settings
+
+Your keyboard should now be paired, and you are ready to proceed with Glass. 
+
+
