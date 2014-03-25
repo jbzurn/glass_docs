@@ -14,25 +14,35 @@ Note: at this time, ensure you have Android APK installed. If this is the first 
 2c) Install by typing  
 
 adb install Settings.apk  (this is case sensitive!)
+(if you are on a Mac and haven’t added ADB to your bash, this command will fail. Enter immediately afterwards the command 
+./!!
 
-Note: this allows us to pair with bluetooth devices, but it's strongly recommended to remove it immediately afterwards because the package causes numerous errors. Removing the package doesn't affect the bluetooth pairing relationships.
+Make sure your Glass is plugged in. 
+When it has completed correctly, the terminal window will display “Success”.
+
+Note: installing Settings.apk allows us to pair with bluetooth devices, but it's strongly recommended to remove it immediately afterwards because the package causes numerous errors. Removing the package doesn't affect the bluetooth pairing relationships.
 
 3. Pair the bluetooth keyboard with your Glass.
 3a) Make sure your Glass is plugged into your usb port, and confirm it's attached by typing 
 
 adb devices 
 
-It will say “list of devices attached” The line below should show a long number followed by “device”. This is your Glass ID, and shows it's connected and the computer can see it.  
+It will say “list of devices attached” .( If you are using a Mac and get the error adb: command not found, this means the terminal can’t find adb. As long as you are still in the folder “adb” is saved in, you can immediately enter the command ./!! in the next prompt. This will rerun the last command, and allow you to use the “adb” in your current folder.)
 
-Note: adb is the Android Debug Bridge. It is installed when you get the Android APK and allows your computer to communicate directly with the Android device.
+Once it works, the line below should show a long number followed by “device”. This is your Glass ID, and shows it's connected and the computer can see it.  
+
+Note: adb is the Android Debug Bridge. It is installed when you get the Android APK and allows your computer to communicate directly with the Android device.  
 
 3b) Make sure the screen on your Glass is on, then type the following command into the computer terminal:
 
 adb shell am start -a android.intent.action.MAIN -n com.android.settings/.Settings
 
-3c) On your Glass, select Settings, tell it to search for bluetooth devices. Make sure your keyboard is turned on and broadcasting the bluetooth signal. If you have an iPazzPort keyboard, turn on the side switch, then press and hold the BT button on the top for a few seconds. When its blue light begins to blink, it is ready to pair.
+(if you again get an error, use this command instead, to run adb locally from your current folder: ./ adb shell am start -a android.intent.action.MAIN -n com.android.settings/.Settings
+
+3c) On your Glass, select Settings, tell it to search for bluetooth devices. Make sure your keyboard is turned on and broadcasting the bluetooth signal. If you have an iPazzPort keyboard, turn on the side switch, then press and hold the BT button on the top for a few seconds. When its blue light begins to blink, it is ready to pair. 
 
 3d) Now for the pairing part. Note that you will have to "pair" the keyboard multiple times. For unknown reasons, it takes several pairing attempts to connect properly. 
+If there are other people nearby using Bluetooth devices, make sure you have chosen the correct device you want to pair with.
 
 Note the pairing code displayed on the Glass.
 
@@ -40,12 +50,16 @@ Note the pairing code displayed on the Glass.
 
 3f) Immediately afterwards, the correct screen/card will show up asking to enter a code + Enter. Put it in correctly THAT SECOND TIME. It will work then.
 
-It should be paired now!
+You may need to try several variations of this. Just keep trying. 
 
+Eventually, it should successfully pair!
+ 
 4) UNINSTALL THE SETTINGS APK!! This is important because this APK causes problems. Uninstalling won't affect your bluetooth pairing. Type
 
 adb uninstall com.android.settings
-
+(./adb uninstall com.android.settings if adb still isn’t in your bash).
+When it is done, it will return “Success”.
 Your keyboard should now be paired, and you are ready to proceed with Glass. 
 
 Note: if you ever accidentally hit the button on the keyboard to transmit the pairing signal, immediately power off the keyboard, and power it back on. Hopefully you'll be quick enough to not disturb your bluetooth pairing. (on the iPazzPort keyboards, this is the BT) button. 
+
