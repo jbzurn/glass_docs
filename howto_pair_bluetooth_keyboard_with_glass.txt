@@ -48,4 +48,4 @@ adb uninstall com.android.settings
 
 Your keyboard should now be paired, and you are ready to proceed with Glass. 
 
-
+Note: if you ever accidentally hit the button on the keyboard to transmit the pairing signal, immediately power off the keyboard, and power it back on. Hopefully you'll be quick enough to not disturb your bluetooth pairing. (on the iPazzPort keyboards, this is the BT) button. 
