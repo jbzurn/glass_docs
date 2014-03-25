@@ -32,7 +32,13 @@ adb shell am start -a android.intent.action.MAIN -n com.android.settings/.Settin
 
 3c) On your Glass, select Settings, tell it to search for bluetooth devices. Make sure your keyboard is turned on and broadcasting the bluetooth signal. If you have an iPazzPort keyboard, turn on the side switch, then press and hold the BT button on the top for a few seconds. When its blue light begins to blink, it is ready to pair.
 
-3d) Note the pairing code displayed on the Glass, and type that code into the bluetooth keyboard. 
+3d) Now for the pairing part. Note that you will have to "pair" the keyboard multiple times. For unknown reasons, it takes several pairing attempts to connect properly. 
+
+Note the pairing code displayed on the Glass, and type that code into the bluetooth keyboard. 
+
+3e) the first time Glass asks for a pairing code, a modal screen will pop up transparently over the screen that says "Pair". This secondary screen doesn't look like the usual Glass cards. You must carefully get rid of this screen by typing an incorrect code and Tap to pair. DO NOT SWIPE THIS SCREEN DOWN; YOU MUST GET RID OF IT BY TAP TO PAIR.
+
+3f) Immediately afterwards, the correct screen/card will show up asking to enter a code + Enter. Put it in correctly THAT SECOND TIME. It will work then.
 
 It should be paired now!
 
